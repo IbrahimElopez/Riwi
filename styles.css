@@ -1,0 +1,452 @@
+/* ===========================
+   VARIABLES GLOBALES
+   Semana 3: definimos colores y
+   tipografía en :root para reutilizarlos
+=========================== */
+:root {
+  --color-primary: #66edbb;
+  --color-primary-dark: #3db88a;
+  --color-bg: #0a0a0a;
+  --color-bg-card: rgba(255, 255, 255, 0.05);
+  --color-border: #1a3a2a;
+  --color-text: #7DF9C2;           
+  --color-text-muted: #a8f0d8;   
+  --font-main: sans-serif;
+  --font-size-base: 1rem;
+  --font-size-small: 0.9rem;
+  --border-radius-sm: 6px;
+  --border-radius-md: 12px;
+  --gap-main: 20px;
+}
+
+/* ===========================
+   RESET GENERAL
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===========================
+   BODY
+=========================== */
+body {
+  font-family: var(--font-main);
+  font-size: var(--font-size-base);
+  background-image: url(https://www.popsci.com/wp-content/uploads/2026/04/embed-artemis-earth_6e11d0.png?strip=all&quality=85);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-attachment: fixed;
+  background-color: var(--color-bg);
+  border: 5px solid var(--color-primary);
+  border-radius: 16px;
+  width: 80%;
+  margin: 1.25rem auto;
+  min-height: 100vh;
+}
+
+/* ===========================
+   ENCABEZADO - Flexbox
+=========================== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+  border-bottom: 2px solid var(--color-primary);
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* ===========================
+   NAVEGACIÓN - Flexbox
+=========================== */
+nav {
+  border: 2px solid var(--color-primary);
+  border-radius: var(--border-radius-md);
+  padding: 0.5rem 1rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Estilos compartidos para todos los enlaces */
+nav ul li a,
+.projects-list li a,
+footer a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a {
+  font-size: var(--font-size-base);
+  padding: 0.25rem 0.625rem;
+  border-radius: var(--border-radius-sm);
+}
+
+/* HOVER compartido para nav y proyectos */
+nav ul li a:hover,
+.projects-list li a:hover {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+/* HOVER del footer */
+footer a:hover {
+  color: var(--color-text);
+  text-decoration: underline;
+}
+
+/* ===========================
+   TEXTOS
+=========================== */
+h1 {
+  font-size: 1.75rem;
+  color: var(--color-text);
+}
+
+h2 {
+  font-size: 1.375rem;
+  color: var(--color-text);
+  margin-bottom: 0.75rem;
+}
+
+p {
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* ===========================
+   SECCIONES
+=========================== */
+section {
+  padding: 1.875rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* ===========================
+   PROYECTOS - Grid (3 columnas)
+=========================== */
+.projects-grid .projects-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin-top: 0.9rem;
+}
+
+.projects-list li a {
+  font-size: var(--font-size-small);
+  padding: 0.875rem 0.75rem;
+  display: block;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--border-radius-sm);
+  height: 100%;
+}
+
+/* ===========================
+   BOTONES DE JAVASCRIPT
+=========================== */
+button {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--border-radius-sm);
+  padding: 0.5rem 1rem;
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  margin-top: 0.75rem;
+  margin-right: 0.5rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+#extra-info {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  border-left: 3px solid var(--color-primary);
+  background-color: var(--color-bg-card);
+  border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+}
+
+/* ===========================
+   IMÁGENES - Semana 3: responsivas
+=========================== */
+img {
+  border: 4px solid rgb(36, 70, 36);
+  border-radius: var(--border-radius-md);
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+/* ===========================
+   GALERÍA DE MASCOTAS - Grid + Flexbox
+=========================== */
+#grid_pets {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap-main);
+  padding: var(--gap-main);
+}
+
+
+.pet-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--border-radius-md);
+  padding: 0.75rem;
+}
+
+.pet-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--border-radius-sm);
+}
+
+.pet-card p {
+  font-size: var(--font-size-small);
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+
+
+/* Título de cada tarjeta de mascota */
+.pet-card h3 {
+  font-size: 1rem;
+  color: var(--color-primary);
+  text-align: center;
+  margin-top: 4px;
+}
+
+
+/* ===========================
+   FORMULARIO
+=========================== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  max-width: 25rem;
+  margin-top: 0.9rem;
+}
+
+
+
+
+/* Estilos agrupados para inputs y textarea */
+input[type="email"],
+input[type="tel"],
+textarea {
+  background-color: #111;
+  color: var(--color-text);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--border-radius-sm);
+  padding: 0.5rem;
+  font-size: 0.95rem;
+  width: 100%;
+}
+
+input[type="submit"] {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  border: none;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--color-primary-dark);
+}
+
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+  padding: 1.25rem;
+  border-top: 2px solid var(--color-primary);
+}
+
+footer ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+footer ul li {
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--font-size-base);
+}
+
+/* ===========================
+   MEDIA QUERIES - Semana 3
+=========================== */
+
+/* TABLET: pantallas medianas (hasta 900px) */
+@media (max-width: 900px) {
+  body {
+    width: 95%;
+  }
+
+  /* Proyectos en 2 columnas */
+  .projects-grid .projects-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Galería en 3 columnas (se mantiene) */
+  #grid_pets {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* MÓVIL: pantallas pequeñas (hasta 600px) */
+@media (max-width: 600px) {
+  body {
+    width: 100%;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    margin: 0;
+  }
+
+  /* Header en columna */
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Nav en columna */
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  /* Proyectos en 1 columna */
+  .projects-grid .projects-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* Galería en 2 columnas */
+  #grid_pets {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  h1 {
+    font-size: 1.375rem;
+  }
+
+  h2 {
+    font-size: 1.125rem;
+  }
+}
+
+
+
+
+/* ===========================
+   MENÚ HAMBURGUESA
+=========================== */
+
+/* El botón hamburguesa - siempre visible */
+#hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2rem;
+  height: 1.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  z-index: 100;
+}
+
+/* Las 3 rayitas */
+#hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-primary);
+  border-radius: 3px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Animación cuando el menú está abierto - se convierte en X */
+#hamburger.open span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+#hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+#hamburger.open span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* En pantallas grandes: nav siempre visible, hamburguesa oculta */
+@media (min-width: 601px) {
+  #hamburger {
+    display: none;
+  }
+
+  #main-nav {
+    display: block !important;
+  }
+}
+
+/* En móvil: nav oculto por defecto */
+@media (max-width: 600px) {
+  #main-nav {
+    display: none;
+    width: 100%;
+  }
+
+  /* Cuando está abierto ocupa todo el ancho */
+  #main-nav.open {
+    display: block;
+  }
+
+  #main-nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+  }
+
+  #main-nav ul li a {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    width: 100%;
+  }
+}

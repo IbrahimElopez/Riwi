@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ibrahim's Portfolio</title>
+
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Iconos Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+
+   <!-- ENCABEZADO Y NAVEGACIÓN -->
+<header>
+  <h1 id="title">Welcome to Ibrahim's Portfolio</h1>
+
+  <!-- Botón hamburguesa (visible solo en móvil/tablet) -->
+  <button id="hamburger" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav id="main-nav">
+    <ul>
+      <li><a href="#about">About me</a></li>
+      <li><a href="#proyects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="mascotas.html">My Pets</a></li>
+    </ul>
+  </nav>
+</header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+
+      <!-- SECCIÓN: SOBRE MÍ -->
+<section id="about">
+  <h2>About me</h2>
+  <p id="about-text">
+    Hi, my name is Ibrahim Ebratt. I'm 28 years old and I'm from
+    Colombia. I'm a software developer trained by Riwi. I know
+    technologies such as Python, HTML, CSS and GitHub. I'm very
+    social and I speak English and Spanish fluently.
+  </p>
+  <!-- Botón 1: cambia el texto del párrafo -->
+  <button id="btn-change-text">Show fun fact</button>
+
+  <!-- Botón 2: muestra/oculta sección extra -->
+  <button id="btn-toggle">Show extra info</button>
+  <div id="extra-info" style="display: none;">
+    <p>I love animals, technology and learning new things every day!</p>
+  </div>
+</section>
+      <!-- SECCIÓN: PROYECTOS -->
+      <section id="proyects" class="projects-grid">
+        <h2>Projects</h2>
+        <ul class="projects-list">
+          <li>
+            <a href="#">Portfolio Website — Personal site built with HTML &amp; CSS</a>
+          </li>
+          <li>
+            <a href="#">Python Calculator — Basic calculator made with Python</a>
+          </li>
+          <li>
+            <a href="#">To-Do App — Task manager using HTML, CSS and JavaScript</a>
+          </li>
+          <li>
+            <a href="#">GitHub Profile — Check out my repos and contributions</a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- SECCIÓN: FORMULARIO DE CONTACTO -->
+      <section id="form-section">
+        <h2>Send me a message</h2>
+        <form>
+          <p>Fill in your details and I'll get back to you!</p>
+
+          <label for="email">Your email:</label><br />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="email@email.com"
+          /><br />
+
+          <label for="phone">Your phone number:</label><br />
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="300-000-0000"
+          />
+
+          <p>How would you like to be contacted?</p>
+          <input type="radio" id="button_email" name="buttons" value="email" />
+          <label for="button_email">Email</label><br />
+          <input type="radio" id="button_phone" name="buttons" value="phone" />
+          <label for="button_phone">Phone</label><br />
+
+          <label for="message">Your message:</label>
+          <textarea
+            id="message"
+            name="text_area"
+            rows="5"
+            cols="30"
+            placeholder="Type your message here..."
+          ></textarea
+          ><br />
+
+          <input type="submit" value="Send message" />
+        </form>
+      </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA: CONTACTO -->
+    <footer>
+      <section id="contact">
+        <h2>Contact me</h2>
+        <ul>
+          <li>
+            <i class="fa-regular fa-envelope"></i>
+            <a href="mailto:expo.ebratt.1997@gmail.com">expo.ebratt.1997@gmail.com</a>
+          </li>
+          <li><i class="fa-brands fa-facebook-f"></i> Facebook</li>
+          <li><i class="fa-brands fa-instagram"></i> Instagram</li>
+          <li><i class="fa-brands fa-whatsapp"></i> WhatsApp</li>
+        </ul>
+      </section>
+    </footer>
+    <!-- Script de interactividad -->
+<script src="script.js"></script>
+  </body>
+</html>
